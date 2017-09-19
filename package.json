@@ -1,0 +1,38 @@
+{
+  "name": "undo-redo-stack",
+  "version": "1.0.0",
+  "description": "An undo/redo module",
+  "main": "dist/index.js",
+  "module": "src/undo-redo-stack.js",
+  "scripts": {
+    "build": "rollup -c && rollup -c ./rollup.umd.js && rollup -c ./rollup.umd.min.js",
+    "prepublish": "npm run build",
+    "test": "rollup ./test/index.js --e tape,ck-stack,ck-stack/dist/stack-test.js --output.format cjs | node | tap-difflet"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chrisknowles/undo-redo-stack.git"
+  },
+  "keywords": [
+    "undo redo",
+    "history"
+  ],
+  "author": "Chris Knowles <chris@chrisknowles.co>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "rollup": "^0.48.2",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-butternut": "^0.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "tap-difflet": "^0.7.0",
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "ck-stack": "^1.0.5"
+  }
+}
